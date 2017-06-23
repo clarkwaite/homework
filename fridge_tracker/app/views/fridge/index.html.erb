@@ -1,0 +1,18 @@
+<h1>These are the Fridges</h1>
+
+<% @fridges.each do |fridge| %>
+<ul>
+  <li>Fridge: <%= fridge.location %></li>
+</ul>
+<% end %>
+
+
+<%= form_for @new_fridge, url: fridge_new_path(@new_fridge) do |f| %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+    <%=f.submit%>
+<% end %>
